@@ -7,8 +7,8 @@ echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt
 sudo apt-get update
 sudo apt-get install helm
 
-//wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+#wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 
 curl https://ipinfo.io/ip
 
-//curl -LO https://github.com/prometheus/prometheus/releases/download/v2.0.0/prometheus-2.0.0.linux-amd64.tar.gz
+#curl -LO https://github.com/prometheus/prometheus/releases/download/v2.0.0/prometheus-2.0.0.linux-amd64.tar.gz
