@@ -82,7 +82,7 @@ resource "google_compute_instance" "default" {
  name = "helm-demo-tf"
  machine_type = "e2-medium"
  zone         = "asia-south1-c"
- tags = ["tf_notneeded"]
+ tags = ["tf-notneeded"]
  labels = {
    "purpose" = "poc"
    "preserve" = "no"
