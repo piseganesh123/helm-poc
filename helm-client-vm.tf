@@ -77,7 +77,7 @@ resource "google_compute_network" "default" {
 }*/
 
 // A single Compute Engine instance
-resource "google_compute_instance" "primary" {
+resource "google_compute_instance" "gcp-instance" {
  // name         = "prografana-poc-vm-${random_id.instance_id.hex}"
  name = "helm-demo-tf"
  machine_type = "e2-medium"
@@ -107,5 +107,5 @@ metadata_startup_script = file("helm-config.sh")
 }
 
 output "instance_ip_addr" {
-  value = google_compute_instance.server.public_ip
+  value = google_compute_instance.gcp-instance.public_ip
 }
