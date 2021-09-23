@@ -1,3 +1,12 @@
+variable "project_id" {
+  type    = string
+  default = "vast-pad-319812"
+}
+provider "google" {
+ credentials = file("/home/piseg432/keys/gke_creator.json")
+ project     = var.project_id
+ region      = "asia-south1"
+}
 resource "google_container_cluster" "primary" {
   name     = "helm-gke-cluster"
   location = "asia-south1-c"

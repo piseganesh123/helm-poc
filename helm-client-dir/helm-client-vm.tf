@@ -107,5 +107,5 @@ metadata_startup_script = file("helm-config.sh")
 }
 
 output "instance_ip_addr" {
-  value = "${google_compute_instance.gcp-instance.public_ip}"
+  value = "${google_compute_instance.gcp-instance.hostname}"
 }
