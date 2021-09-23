@@ -79,7 +79,7 @@ resource "google_compute_network" "default" {
 // A single Compute Engine instance
 resource "google_compute_instance" "default" {
  // name         = "prografana-poc-vm-${random_id.instance_id.hex}"
- name = "helm-demo_tf"
+ name = "helm-demo-tf"
  machine_type = "e2-medium"
  zone         = "asia-south1-c"
  tags = ["tf_notneeded"]
