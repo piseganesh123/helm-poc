@@ -10,7 +10,7 @@ variable "region" {
 
 variable "key-location" {
   type = string
-  default = "/home/pgan432/keys/gce-creator.json"
+  default = "/home/pgan432/keys/gke-creator-level-epoch.json"
 }
 
 variable "os-user" {
