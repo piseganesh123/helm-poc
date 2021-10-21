@@ -1,17 +1,12 @@
 // Create VM for Ansible client
 // Configure the Google Cloud provider
 
-variable "project_id" {
-  type = string
-  default = "vast-pad-319812"
-}
-
 provider "google" {
- credentials = file("/home/piseg432/keys/gce-creator.json")
+ credentials = file(var.key-location)
 // credentials =  $(GOOGLE_CLOUD_KEYFILE_JSON)
  //project     = "vast-pad-319812"
  project     = var.project_id
- region      = "asia-south1"
+ region      = var.region
 }
 
 /*module "network_firewall-rules" {
@@ -92,16 +87,12 @@ resource "google_compute_instance" "gcp-instance" {
      image = "ubuntu-1804-bionic-v20210720"
    }
  }
-
-// 
 // metadata_startup_script = "sudo apt-get update; sudo apt-get install -yq build-essential python-pip rsync"
 metadata_startup_script = file("helm-config.sh")
 
  network_interface {
    network = "default"
-
    access_config {
-     // Include this section to give the VM an external ip address
    }
  }
 }

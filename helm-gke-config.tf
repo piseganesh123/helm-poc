@@ -1,11 +1,7 @@
-variable "project_id" {
-  type    = string
-  default = "vast-pad-319812"
-}
 provider "google" {
- credentials = file("/home/piseg432/keys/gke_creator.json")
+ credentials = file(var.key-location)
  project     = var.project_id
- region      = "asia-south1"
+ region      = var.region
 }
 resource "google_container_cluster" "primary" {
   name     = "helm-gke-cluster"
@@ -14,11 +10,11 @@ resource "google_container_cluster" "primary" {
   remove_default_node_pool = true
   initial_node_count       = 1
 }
-
 resource "google_service_account" "default" {
   account_id   = "helm-poc-service-account-id"
   display_name = "Service Account"
 }
+
 resource "google_container_node_pool" "primary_preemptible_nodes" {
   name       = "helm-node-pool"
   location   = "asia-south1-c"
@@ -27,7 +23,6 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
   node_config {
     preemptible  = true
     machine_type = "e2-medium"
-
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
     service_account = google_service_account.default.email
     oauth_scopes    = [
