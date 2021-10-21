@@ -86,15 +86,19 @@ resource "google_compute_instance" "gcp-instance" {
    initialize_params {
      image = "ubuntu-1804-bionic-v20210720"
    }
- }
+  }
 // metadata_startup_script = "sudo apt-get update; sudo apt-get install -yq build-essential python-pip rsync"
-metadata_startup_script = file("helm-config.sh")
+  metadata_startup_script = file("helm-config.sh")
 
  network_interface {
    network = "default"
    access_config {
    }
  }
+   metadata = {
+   ssh-keys = "$var.os-user:${file("~/.ssh/id_rsa.pub")}"
+   enable-oslogin = "TRUE"
+  }
 }
 
 output "instance_ip_addr" {
