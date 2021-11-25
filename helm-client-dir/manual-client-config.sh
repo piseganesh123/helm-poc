@@ -14,6 +14,8 @@ kubectl run -i --tty ubuntu --image=ubuntu:16.04 --restart=Never -- bash -il
 #install tools inside container
 apt-get update && apt-get install mysql-client -y
 
+mysql -h <my-release-name> -p
+
 #to inspect helm chart
 helm inspect stable/mysql
 
