@@ -1,6 +1,6 @@
 variable "project_id" {
   type = string
-  default = "level-epoch-329208"
+  default = "level-surfer-357407"
 }
 
 variable "region" {
@@ -10,10 +10,10 @@ variable "region" {
 
 variable "key-location" {
   type = string
-  default = "/home/pgan432/keys/gke-creator-level-epoch.json"
+  default = "/home/gpiseg12/keys/gce-creator-level-surfer.json"
 }
 
 variable "os-user" {
   type = string
-  default = "pgan432"
+  default = "gpiseg12"
 }
