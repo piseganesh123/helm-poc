@@ -10,7 +10,7 @@ variable "region" {
 
 variable "key-location" {
   type = string
-  default = "/home/gpiseg12/keys/gce-creator-level-surfer.json"
+  default = "/home/gpiseg123/keys/gce-creator-level-surfer.json"
 }
 
 variable "os-user" {
