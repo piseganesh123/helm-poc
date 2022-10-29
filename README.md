@@ -1,7 +1,8 @@
 # helm-poc
-Purpose - install and test helm
+Purpose - install and test helm om GKE
 
 prerequisute
+Helm installed
 enable kubernetes, compute and gcr api
 need 3 service accounts to Create GKE_cluster, Compute Instance and access GCR
 
