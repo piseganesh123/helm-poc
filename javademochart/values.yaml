@@ -13,13 +13,13 @@ image:
     httpGet:
       path: /
       port: 80
-    initialDelaySeconds: 30
+    initialDelaySeconds: 60
     periodSeconds: 5  
   livenessProbe:
     httpGet:
       path: /
       port: 80
-    initialDelaySeconds: 30
+    initialDelaySeconds: 60
     periodSeconds: 10
 
 imagePullSecrets: []
@@ -51,8 +51,6 @@ securityContext: {}
 service:
   type: NodePort
   port: 80
-  targetPort: 8080
-  nodePort: 30008
 
 ingress:
   enabled: false
