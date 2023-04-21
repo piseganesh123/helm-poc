@@ -42,13 +42,15 @@ spec:
               path: /DemoApplication
               port: http
             initialDelaySeconds: 120
-            periodSeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 10
           readinessProbe:
             httpGet:
               path: /DemoApplication
               port: http
             initialDelaySeconds: 120
-            periodSeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 10
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
