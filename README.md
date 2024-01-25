@@ -36,6 +36,8 @@ update values in values.yaml
 
 $helm install example ./mychart --set service.type=NodePort
 
+e.g $helm install helm-demo ./javademochart
+
 NOTES:
 1. Get the application URL by running these commands:
   export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=mychart,app.kubernetes.io/instance=mychart-1634979261" -o jsonpath="{.items[0].metadata.name}")
