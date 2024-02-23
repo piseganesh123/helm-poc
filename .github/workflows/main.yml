@@ -9,9 +9,9 @@ permissions:
   contents: read
 
 jobs:
-  terraform:
+  helm-job:
     name: 'helm'
-    runs-on: my-runner
+    runs-on: my-helm-runner
     # ubuntu-latest
     environment: production
 
